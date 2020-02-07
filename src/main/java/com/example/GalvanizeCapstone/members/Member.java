@@ -50,6 +50,6 @@ public class Member {
 
     @Column
     private  int bi_coverage;
-    
+
 
 }

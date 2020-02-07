@@ -1,20 +1,17 @@
 package com.example.GalvanizeCapstone.claims;
 
+import com.example.GalvanizeCapstone.members.Member;
 import lombok.Data;
 
 import javax.persistence.*;
 
-public class Claim {
-    import lombok.Data;
 
-import javax.persistence.*;
 
     @Entity
-    @Table( name = "members")
+    @Table( name = "claim")
     @Data
+    public class Claim {
 
-    public class Member {
-        public Member(){}
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,54 +22,35 @@ import javax.persistence.*;
         private Member member;
 
         @Column
-        private  String claimant_name;
+        private String claimant_name;
 
         @Column
-        private  String claimant_email;
+        private String claimant_email;
 
         @Column
-        private  String claimant_address;
+        private String claimant_address;
 
         @Column
-        private  String claimant_phone;
+        private String claimant_phone;
 
         @Column
-        private  String base_state;
+        private String occurrence_state;
 
         @Column
-        private  String occurrence_state;
+        private String claimant_auto;
 
         @Column
-        private  String claimant_auto;
+        private int research_coverage_checkList_id;
 
         @Column
-        private  int collision_coverage;
+        private int rc_reason1_id;
 
         @Column
-        private  int pd_coverage;
+        private int rc_reason2_id;
 
-        @Column
-        private  int bi_coverage;
-
-        @Column
-        private  int research_coverage_checkList_id;
-
-        @Column
-        private  int rc_reason1_id;
-
-        @Column
-        private  int rc_reason2_id;
-
-
-
-
-
-
-
-
-
-
-
-
-
+        public Claim() {}
     }
+
+
+
+
