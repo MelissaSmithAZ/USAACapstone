@@ -15,7 +15,7 @@ public class CarNotOnPolicyCheckListsService {
     public CarNotOnPolicyCheckListsService(CarNotOnPolicyCheckListsRepository carNotOnPolicyCheckListsRepository) {
         this.carNotOnPolicyCheckListsRepository = carNotOnPolicyCheckListsRepository;
     }
-    public List<CarNotOnPolicyCheckList> getAllCarNotOnPolicyCheckList() {
+    public List<CarNotOnPolicyCheckList> getAllCarNotOnPolicyCheckLists() {
         return this.carNotOnPolicyCheckListsRepository.findAll();
     }
     public Optional<CarNotOnPolicyCheckList> getOneCarNotOnPolicyCheckList(int id) {

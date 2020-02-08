@@ -1,7 +1,5 @@
 package com.example.GalvanizeCapstone.carNotOnPolicyCheckList;
 
-import com.example.GalvanizeCapstone.transportationCheckLists.TransportationCheckList;
-import com.example.GalvanizeCapstone.transportationCheckLists.TransportationCheckListsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,17 +20,17 @@ public class CarNotOnPolicyCheckListsController {
         return this.carNotOnPolicyCheckListsService.getAllCarNotOnPolicyCheckLists();
     }
     @GetMapping("/{id}")
-    public TransportationCheckList getOneTransportationCheckList(@PathVariable int id) {
-        TransportationCheckList transportationCheckList = transportationCheckListsService.getOneTransportationCheckList(id).orElseThrow(IllegalArgumentException::new);
-        return transportationCheckList;
+    public CarNotOnPolicyCheckList getOneCarNotOnPolicyCheckList(@PathVariable int id) {
+        CarNotOnPolicyCheckList carNotOnPolicyCheckList = carNotOnPolicyCheckListsService.getOneCarNotOnPolicyCheckList(id).orElseThrow(IllegalArgumentException::new);
+        return carNotOnPolicyCheckList;
     }
     @PostMapping
-    public TransportationCheckList addOneTransportationCheckList(@RequestBody TransportationCheckList newTransportationCheckList) {
-        if (newTransportationCheckList.getCall() == null || newTransportationCheckList.getLetter() == null || newTransportationCheckList.getClaimant_call() == null || newTransportationCheckList.getClaimant_letter() == null)
+    public CarNotOnPolicyCheckList addOneCarNotOnPolicyCheckList(@RequestBody CarNotOnPolicyCheckList newCarNotOnPolicyCheckList) {
+        if (newCarNotOnPolicyCheckList.getCallMember() == null || newCarNotOnPolicyCheckList.getRentalAgreement() == null || newCarNotOnPolicyCheckList.getClaimant_letter() == null || newCarNotOnPolicyCheckList.getFinal_letterMember() == null)
             throw new IllegalArgumentException("Not all fields are valid. Go back and make sure all fields are valid " + "before API call is made.");
 
 
-        return transportationCheckListsService.addOneTransportationCheckList(newTransportationCheckList);
+        return carNotOnPolicyCheckListsService.addOneCarNotOnPolicyCheckList(newCarNotOnPolicyCheckList);
 
     }
 
