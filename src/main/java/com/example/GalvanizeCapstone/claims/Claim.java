@@ -1,13 +1,14 @@
 package com.example.GalvanizeCapstone.claims;
 
+import com.example.GalvanizeCapstone.carNotOnPolicyCheckList.CarNotOnPolicyCheckList;
+import com.example.GalvanizeCapstone.coverageCheckLists.CoverageCheckList;
 import com.example.GalvanizeCapstone.members.Member;
+import com.example.GalvanizeCapstone.transportationCheckLists.TransportationCheckList;
 import lombok.Data;
 
 import javax.persistence.*;
 
-
-
-    @Entity
+@Entity
     @Table( name = "claim")
     @Data
     public class Claim {
@@ -21,32 +22,38 @@ import javax.persistence.*;
         @JoinColumn
         private Member member;
 
+        @OneToOne
+        @JoinColumn
+        private CoverageCheckList coverageCheckLists;
+
+        @OneToOne
+        @JoinColumn
+         private CarNotOnPolicyCheckList carNotOnPolicyCheckLists;
+
+        @OneToOne
+        @JoinColumn
+        private TransportationCheckList transportationCheckLists;
+
         @Column
         private String claimant_name;
 
         @Column
+        private String claimant_phone;
+    @Column
+    private String claimant_address;
+
+        @Column
         private String claimant_email;
 
-        @Column
-        private String claimant_address;
-
-        @Column
-        private String claimant_phone;
+    @Column
+    private String claimant_auto;
 
         @Column
         private String occurrence_state;
 
-        @Column
-        private String claimant_auto;
 
-        @Column
-        private int research_coverage_checkList_id;
 
-        @Column
-        private int rc_reason1_id;
 
-        @Column
-        private int rc_reason2_id;
 
         public Claim() {}
     }

@@ -1,5 +1,6 @@
 package com.example.GalvanizeCapstone.transportationCheckLists;
 
+import com.example.GalvanizeCapstone.claims.Claim;
 import com.example.GalvanizeCapstone.coverageCheckLists.CoverageCheckList;
 import lombok.Data;
 
@@ -7,7 +8,7 @@ import javax.persistence.*;
 
 
 @Entity
-@Table( name = "transportation")
+@Table( name = "TransportationCheckList")
 @Data
 public class TransportationCheckList {
 
@@ -18,6 +19,10 @@ public class TransportationCheckList {
         @OneToOne
         @JoinColumn
         private CoverageCheckList coverageCheckList;
+
+        @OneToOne
+        @JoinColumn
+        private Claim claim;
 
         @Column
         private String call;
@@ -30,4 +35,7 @@ public class TransportationCheckList {
 
         @Column
         private String claimant_call;
+
+        public TransportationCheckList() {
+        }
 }

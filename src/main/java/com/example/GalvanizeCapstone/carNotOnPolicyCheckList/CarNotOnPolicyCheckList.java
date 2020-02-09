@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 
 @Entity
-@Table( name = "transportation")
+@Table( name = "carNotOnPolicyCheckList")
 @Data
 public class CarNotOnPolicyCheckList {
 
@@ -32,4 +32,6 @@ public class CarNotOnPolicyCheckList {
     private Boolean claimant_call;
     @Column
     private Boolean final_letterMember;
+
+    public CarNotOnPolicyCheckList() {}
 }

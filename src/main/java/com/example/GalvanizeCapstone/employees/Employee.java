@@ -1,16 +1,17 @@
 package com.example.GalvanizeCapstone.employees;
 
+import com.example.GalvanizeCapstone.managers.Manager;
 import lombok.Data;
 
 import javax.persistence.*;
 
 @Entity
-@Table( name = "members")
+@Table( name = "employees")
 @Data
 
 public class Employee {
 
-    public Employee(){}
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +23,8 @@ public class Employee {
     @Column
     private  int employee_number;
 
-//    @OneToOne
-//    @JoinColumn
-//    private Manager manager;
+    @ManyToOne
+    @JoinColumn
+    private Manager manager;
+    public Employee(){}
 }

@@ -4,6 +4,7 @@ import com.example.GalvanizeCapstone.employees.Employee;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table( name = "managers")
@@ -12,7 +13,7 @@ import javax.persistence.*;
 
 public class Manager {
 
-    public Manager(){}
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,5 +27,7 @@ public class Manager {
 
     @OneToMany
     @JoinColumn
-    private Employee employee;
+    private List<Employee> employees;
+    public Manager(){}
+
 }

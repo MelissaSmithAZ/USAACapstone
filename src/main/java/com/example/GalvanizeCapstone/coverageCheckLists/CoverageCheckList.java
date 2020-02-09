@@ -1,5 +1,7 @@
 package com.example.GalvanizeCapstone.coverageCheckLists;
 
+import com.example.GalvanizeCapstone.carNotOnPolicyCheckList.CarNotOnPolicyCheckList;
+import com.example.GalvanizeCapstone.claims.Claim;
 import com.example.GalvanizeCapstone.members.Member;
 import lombok.Data;
 
@@ -15,19 +17,31 @@ public class CoverageCheckList {
     private int id;
 
     @Column
-    private String carNotOnPolicy;
+    private Boolean carNotOnPolicy;
 
     @Column
-    private String ror;
+    private Boolean ror;
 
     @Column
-    private String transportation;
+    private Boolean transportation;
 
     @Column
-    private String limits;
+    private Boolean limits;
 
     @ManyToOne
     @JoinColumn
     private Member member;
+
+    @OneToOne
+    @JoinColumn
+    private CarNotOnPolicyCheckList carNotOnPolicyCheckList;
+
+    @OneToOne
+    @JoinColumn
+    private Claim claim;
+
+
+
+    public CoverageCheckList() {}
 
 }
