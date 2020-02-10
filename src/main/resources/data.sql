@@ -9,13 +9,13 @@ INSERT INTO members(member_name,member_number,phone,address,email,auto_1,base_st
 ('Kim Maret', 66677788,'777-888-7890','70 Happy St, Phoenix AZ 89999','kimMaret@google.com', '2020 Subaru Crosstrek', 'CA',1000000,500,500000);
 
 --Claim
-INSERT INTO claim(claimant_name,claimant_phone,claimant_address,claimant_email,claimant_auto,occurrence_state   ) VALUES
-('Jack Black','987-989-9898','90 Golf Rd, Phoenix AZ 99999', 'Golf@golf.com', '1999 VW Bug', 'AZ'  ),
-('Big O Notation','876-987-0000','O nth st, San Diego CA 99999', 'BigO@gmail.com', '2000 Toyota Camry', 'CA' ),
-('Hanna Smith','999-000-1234','45 Easy Rd, Phoenix AZ 99999', 'Easy@gmail.com', '2019 Toyota Tacoma', 'AZ' ),
-('Tabby Jones','789-222-9876','100 10th Rd, LA CA 99999', 'TabbyCat@cat.com', '2020 Chrysler 200', 'CA' ),
-('Sabrina Baxter','777-777-7777','777 Star Circle, San Diego CA 44444', 'SabrinaStar@yahoo.com', '2020 Toyota Camry', 'CA' ),
-('Luna Moon','333-777-9898','1/2 Moon  Rd, San Diego CA 99999', 'FullMoon@yahoo.com', '1999 VW Golf GTI Rabbit', 'CA' );
+INSERT INTO claim(claimant_name,claimant_phone,claimant_address,claimant_email,claimant_auto,occurrence_state, car_not_on_policy_check_lists_id, coverage_check_lists_id, member_id, transportation_check_lists_id  ) VALUES
+('Jack Black','987-989-9898','90 Golf Rd, Phoenix AZ 99999', 'Golf@golf.com', '1999 VW Bug', 'AZ', null, null , null, null  ),
+('Big O Notation','876-987-0000','O nth st, San Diego CA 99999', 'BigO@gmail.com', '2000 Toyota Camry', 'CA' , null, null, null, null),
+('Hanna Smith','999-000-1234','45 Easy Rd, Phoenix AZ 99999', 'Easy@gmail.com', '2019 Toyota Tacoma', 'AZ', null, null, null, null ),
+('Tabby Jones','789-222-9876','100 10th Rd, LA CA 99999', 'TabbyCat@cat.com', '2020 Chrysler 200', 'CA', null, null, null, null ),
+('Sabrina Baxter','777-777-7777','777 Star Circle, San Diego CA 44444', 'SabrinaStar@yahoo.com', '2020 Toyota Camry', 'CA', null, null, null, null ),
+('Luna Moon','333-777-9898','1/2 Moon  Rd, San Diego CA 99999', 'FullMoon@yahoo.com', '1999 VW Golf GTI Rabbit', 'CA', null, null, null, null );
 
 --CoverageCheckList
 INSERT INTO coverage_check_list(car_not_on_policy,limits,ror,transportation,car_not_on_policy_check_list_id, claim_id,transportation_check_list_id ) VALUES
