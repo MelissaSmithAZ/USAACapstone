@@ -29,7 +29,7 @@ public class MembersController {
 
     @PostMapping
     public Member addOneMember(@RequestBody Member newMember) {
-        if (newMember.getEmail() == null || newMember.getAddress() == null || newMember.getMember_number() < 0 || newMember.getMember_name() == null || newMember.getPhone() == null || newMember.getBase_state() == null  || newMember.getAuto_1() == null){
+        if (newMember.getEmail() == null || newMember.getAddress() == null || newMember.getMember_number() < 0 || newMember.getMember_name() == null || newMember.getPhone() == null     || newMember.getBase_state() == null  || newMember.getAuto_1() == null){
             throw new IllegalArgumentException("Not all fields are valid. Go back and make sure all fields are valid " +
                     "before API call is made.");
         }

@@ -2,6 +2,7 @@ package com.example.GalvanizeCapstone.claims;
 
 import com.example.GalvanizeCapstone.carNotOnPolicyCheckList.CarNotOnPolicyCheckList;
 import com.example.GalvanizeCapstone.coverageCheckLists.CoverageCheckList;
+import com.example.GalvanizeCapstone.employees.Employee;
 import com.example.GalvanizeCapstone.members.Member;
 import com.example.GalvanizeCapstone.transportationCheckLists.TransportationCheckList;
 import lombok.Data;
@@ -50,6 +51,10 @@ import javax.persistence.*;
 
         @Column
         private String occurrence_state;
+
+    @OneToOne
+    @JoinColumn
+    private Employee employee;
 
 
 

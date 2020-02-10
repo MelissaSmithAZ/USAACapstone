@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/transportationCheckList")
+@RequestMapping("transportationCheckList")
 public class TransportationCheckListsController {
     @Autowired
     private final TransportationCheckListsService transportationCheckListsService;
