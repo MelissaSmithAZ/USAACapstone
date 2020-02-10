@@ -2,7 +2,7 @@ package com.example.GalvanizeCapstone.coverageCheckLists;
 
 import com.example.GalvanizeCapstone.carNotOnPolicyCheckList.CarNotOnPolicyCheckList;
 import com.example.GalvanizeCapstone.claims.Claim;
-import com.example.GalvanizeCapstone.members.Member;
+import com.example.GalvanizeCapstone.transportationCheckLists.TransportationCheckList;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -28,17 +28,19 @@ public class CoverageCheckList {
     @Column
     private Boolean limits;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn
-    private Member member;
+    private Claim claim;
+
+    @OneToOne
+    @JoinColumn
+    private TransportationCheckList transportationCheckList;
 
     @OneToOne
     @JoinColumn
     private CarNotOnPolicyCheckList carNotOnPolicyCheckList;
 
-    @OneToOne
-    @JoinColumn
-    private Claim claim;
+
 
 
 
