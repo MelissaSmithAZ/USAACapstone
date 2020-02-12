@@ -23,7 +23,7 @@ public class Manager {
     private  String manager_name;
 
     @Column
-    private  int manager_employee_number;
+    private  int manager_number;
 
     @OneToMany
     @JoinColumn

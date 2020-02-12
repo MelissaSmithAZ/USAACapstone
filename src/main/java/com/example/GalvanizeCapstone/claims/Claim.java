@@ -2,7 +2,6 @@ package com.example.GalvanizeCapstone.claims;
 
 import com.example.GalvanizeCapstone.carNotOnPolicyCheckList.CarNotOnPolicyCheckList;
 import com.example.GalvanizeCapstone.coverageCheckLists.CoverageCheckList;
-import com.example.GalvanizeCapstone.employees.Employee;
 import com.example.GalvanizeCapstone.members.Member;
 import com.example.GalvanizeCapstone.transportationCheckLists.TransportationCheckList;
 import lombok.Data;
@@ -25,36 +24,39 @@ import javax.persistence.*;
 
         @OneToOne
         @JoinColumn
-        private CoverageCheckList coverageCheckLists;
+        private CoverageCheckList coverageCheckList;
 
         @OneToOne
         @JoinColumn
-         private CarNotOnPolicyCheckList carNotOnPolicyCheckLists;
+         private CarNotOnPolicyCheckList carNotOnPolicyCheckList;
 
         @OneToOne
         @JoinColumn
-        private TransportationCheckList transportationCheckLists;
+        private TransportationCheckList transportationCheckList;
 
         @Column
         private String claimant_name;
 
         @Column
         private String claimant_phone;
-    @Column
-    private String claimant_address;
+        @Column
+        private String claimant_address;
 
         @Column
         private String claimant_email;
 
-    @Column
-    private String claimant_auto;
+        @Column
+        private String claimant_auto;
 
         @Column
         private String occurrence_state;
 
-    @OneToOne
-    @JoinColumn
-    private Employee employee;
+        @Column
+        private int employee_id;
+
+//        @OneToOne
+//        @JoinColumn
+//        private Employee employee;
 
 
 

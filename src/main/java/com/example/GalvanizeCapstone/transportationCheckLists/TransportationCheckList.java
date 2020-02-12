@@ -1,7 +1,5 @@
 package com.example.GalvanizeCapstone.transportationCheckLists;
 
-import com.example.GalvanizeCapstone.claims.Claim;
-import com.example.GalvanizeCapstone.coverageCheckLists.CoverageCheckList;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -16,13 +14,6 @@ public class TransportationCheckList {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private int id;
 
-        @OneToOne
-        @JoinColumn
-        private CoverageCheckList coverageCheckList;
-
-        @OneToOne
-        @JoinColumn
-        private Claim claim;
 
         @Column
         private String call;

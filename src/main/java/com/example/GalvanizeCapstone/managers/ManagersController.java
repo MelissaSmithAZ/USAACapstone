@@ -28,7 +28,7 @@ public class ManagersController {
 
     @PostMapping
     public Manager addOneManager(@RequestBody Manager newManager) {
-        if (newManager.getManager_name() == null || newManager.getManager_employee_number() < 0 ){
+        if (newManager.getManager_name() == null || newManager.getManager_number() < 0 ){
             throw new IllegalArgumentException("Not all fields are valid. Go back and make sure all fields are valid " +
                     "before API call is made.");
         }

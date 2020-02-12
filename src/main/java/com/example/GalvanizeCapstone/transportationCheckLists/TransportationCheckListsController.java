@@ -32,4 +32,15 @@ public class TransportationCheckListsController {
         return transportationCheckListsService.addOneTransportationCheckList(newTransportationCheckList);
 
     }
+    @PatchMapping
+    public TransportationCheckList updateOneTransportationCheckList(@RequestBody TransportationCheckList updatedTransportationCheckList) {
+        TransportationCheckList transportationCheckList = transportationCheckListsService.getOneTransportationCheckList(updatedTransportationCheckList.getId()).orElseThrow(IllegalArgumentException::new);
+        return transportationCheckListsService.updateOneTransportationCheckList(updatedTransportationCheckList);
+    }
+
+    @DeleteMapping("/{id}")
+    public String removeOneTransportationCheckList(@PathVariable int id) {
+        TransportationCheckList transportationCheckList = transportationCheckListsService.getOneTransportationCheckList(id).orElseThrow(IllegalArgumentException::new);
+        return transportationCheckListsService.removeOneTransportationCheckList(id);
+    }
 }

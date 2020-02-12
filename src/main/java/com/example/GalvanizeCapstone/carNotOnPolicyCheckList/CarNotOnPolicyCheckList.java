@@ -1,7 +1,5 @@
 package com.example.GalvanizeCapstone.carNotOnPolicyCheckList;
 
-import com.example.GalvanizeCapstone.claims.Claim;
-import com.example.GalvanizeCapstone.coverageCheckLists.CoverageCheckList;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -17,11 +15,6 @@ public class CarNotOnPolicyCheckList {
     private int id;
 
 
-
-    @OneToOne
-    @JoinColumn
-    private Claim claim;
-
     @Column
     private Boolean callMember;
 
@@ -35,10 +28,6 @@ public class CarNotOnPolicyCheckList {
     private Boolean claimant_call;
     @Column
     private Boolean final_letterMember;
-
-    @OneToOne
-    @JoinColumn
-    private CoverageCheckList coverageCheckList;
 
     public CarNotOnPolicyCheckList() {}
 }

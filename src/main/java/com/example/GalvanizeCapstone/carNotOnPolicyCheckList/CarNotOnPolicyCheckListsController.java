@@ -34,4 +34,16 @@ public class CarNotOnPolicyCheckListsController {
 
     }
 
+    @PatchMapping
+    public CarNotOnPolicyCheckList updateOneCarNotOnPolicyCheckList(@RequestBody CarNotOnPolicyCheckList updatedCarNotOnPolicyCheckList) {
+        CarNotOnPolicyCheckList carNotOnPolicyCheckList = carNotOnPolicyCheckListsService.getOneCarNotOnPolicyCheckList(updatedCarNotOnPolicyCheckList.getId()).orElseThrow(IllegalArgumentException::new);
+        return carNotOnPolicyCheckListsService.updateOneCarNotOnPolicyCheckList(updatedCarNotOnPolicyCheckList);
+    }
+
+    @DeleteMapping("/{id}")
+    public String removeOneCarNotOnPolicyCheckList(@PathVariable int id) {
+        CarNotOnPolicyCheckList carNotOnPolicyCheckList = carNotOnPolicyCheckListsService.getOneCarNotOnPolicyCheckList(id).orElseThrow(IllegalArgumentException::new);
+        return carNotOnPolicyCheckListsService.removeOneCarNotOnPolicyCheckList(id);
+    }
+
 }

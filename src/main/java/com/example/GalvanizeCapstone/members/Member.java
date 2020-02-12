@@ -1,10 +1,8 @@
 package com.example.GalvanizeCapstone.members;
 
-import com.example.GalvanizeCapstone.claims.Claim;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table( name = "members")
@@ -45,9 +43,9 @@ public class Member {
     @Column
     private  int pd_coverage;
 
-    @OneToMany
-    @JoinColumn
-    private List<Claim> claims;
+//    @OneToMany
+//    @JoinColumn
+//    private List<Claim> claims;
 
     public Member(){}
 
