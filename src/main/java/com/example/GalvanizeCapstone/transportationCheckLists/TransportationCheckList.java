@@ -14,18 +14,23 @@ public class TransportationCheckList {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private int id;
 
+        @Column
+        private Boolean call;
 
         @Column
-        private String call;
+        private String call_doc;
 
         @Column
-        private String letter;
+        private Boolean letter;
 
         @Column
-        private String claimant_letter;
+        private Boolean claimant_letter;
 
         @Column
-        private String claimant_call;
+        private Boolean claimant_call;
+
+        @Column
+        private String claimant_call_doc;
 
         public TransportationCheckList() {
         }

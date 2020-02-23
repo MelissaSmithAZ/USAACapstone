@@ -35,6 +35,9 @@ import javax.persistence.*;
         private TransportationCheckList transportationCheckList;
 
         @Column
+        private int claim_number;
+
+        @Column
         private String claimant_name;
 
         @Column

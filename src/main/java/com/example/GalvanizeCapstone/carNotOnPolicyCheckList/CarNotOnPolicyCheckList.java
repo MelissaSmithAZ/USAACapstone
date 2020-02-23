@@ -19,13 +19,23 @@ public class CarNotOnPolicyCheckList {
     private Boolean callMember;
 
     @Column
-    private Boolean rentalAgreement;
+    private  String callDoc;
+
+
+    @Column
+    private Boolean rental_agreement;
+//    @Column
+//    private  String notes_on_rental_agreement;
 
     @Column
     private Boolean claimant_letter;
 
     @Column
     private Boolean claimant_call;
+
+    @Column
+    private String claimant_call_doc;
+
     @Column
     private Boolean final_letterMember;
 

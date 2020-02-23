@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/carNotOnPolicyCheckList")
 
@@ -26,7 +26,7 @@ public class CarNotOnPolicyCheckListsController {
     }
     @PostMapping
     public CarNotOnPolicyCheckList addOneCarNotOnPolicyCheckList(@RequestBody CarNotOnPolicyCheckList newCarNotOnPolicyCheckList) {
-        if (newCarNotOnPolicyCheckList.getCallMember() == null || newCarNotOnPolicyCheckList.getRentalAgreement() == null || newCarNotOnPolicyCheckList.getClaimant_letter() == null || newCarNotOnPolicyCheckList.getFinal_letterMember() == null)
+        if (newCarNotOnPolicyCheckList.getCallMember() == null || newCarNotOnPolicyCheckList.getClaimant_letter() == null || newCarNotOnPolicyCheckList.getFinal_letterMember() == null)
             throw new IllegalArgumentException("Not all fields are valid. Go back and make sure all fields are valid " + "before API call is made.");
 
 
