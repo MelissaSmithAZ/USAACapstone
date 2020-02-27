@@ -19,6 +19,12 @@ public class TransportationCheckListsController {
     public List<TransportationCheckList> getAllTransportationCheckLists() {
         return this.transportationCheckListsService.getAllTransportationCheckLists();
     }
+    @GetMapping("/claims/{id}")
+    public TransportationCheckList getTransportationChecklistByClaimId(@PathVariable int id) {
+        TransportationCheckList transportationCheckList = transportationCheckListsService.getOneTransportationCheckList(id).orElseThrow(IllegalArgumentException::new);
+        return transportationCheckList;
+    }
+
     @GetMapping("/{id}")
     public TransportationCheckList getOneTransportationCheckList(@PathVariable int id) {
         TransportationCheckList transportationCheckList = transportationCheckListsService.getOneTransportationCheckList(id).orElseThrow(IllegalArgumentException::new);

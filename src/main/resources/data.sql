@@ -11,29 +11,16 @@ INSERT INTO members(member_name,member_number,phone,address,email,auto_1,base_st
 
 
 --CoverageCheckList
-INSERT INTO coverage_check_list(car_not_on_policy,limits,ror,transportation ) VALUES
-(true, false,false,false),
-(false,false,false,true),
-(true,false,false,false),
-(false,false,false,true),
-(true,false,false,false),
-(true,false,false,true);
+--INSERT INTO coverage_check_list(car_not_on_policy,limits,ror,transportation ) VALUES
+--(true, false,false,false),
+--(false,false,false,true),
+--(true,false,false,false),
+--(false,false,false,true),
+--(true,false,false,false),
+--(true,false,false,true);
 
 
---TransportationCheckList
-INSERT INTO transportation_check_list(call,call_doc,claimant_call,claimant_call_doc, claimant_letter ,letter) VALUES
-(true,'test',false,'test',false, false ),
-(false,null, true,null, false, false),
-(true, null,false, null,false, false),
-(false,null, false,null, false, false),
-(false, null,false,null, false, false),
-(false,null, false,null, false, false);
 
---CarNotOnPolicyCheckList
-INSERT INTO car_not_on_policy_check_list(call_doc,call_member,claimant_call, claimant_call_doc,claimant_letter ,final_letter_member, rental_agreement ) VALUES
-('test',true, false, 'test',false, false, false  ),
-('test',false, true,null, false, false, false  ),
-('test',true, false, null,false, false, false );
 
 --Employees
 INSERT INTO employees(employee_name,employee_number ) VALUES
@@ -48,10 +35,25 @@ INSERT INTO managers(manager_number ,manager_name ) VALUES
 (12, 'Karen Smith');
 
 --Claim
-INSERT INTO claim(claim_number,claimant_name,claimant_phone,claimant_address,claimant_email,claimant_auto,occurrence_state, car_not_on_policy_check_list_id, coverage_check_list_id, employee_id,member_id,transportation_check_list_id  ) VALUES
-(23284,'Jack Black','987-989-9898','90 Golf Rd, Phoenix AZ 99999', 'Golf@golf.com', '1999 VW Bug', 'AZ', null, 1 ,1, 1, null),
-(78996,'Big O Notation','876-987-0000','O nth st, San Diego CA 99999', 'BigO@gmail.com', '2000 Toyota Camry', 'CA' , null, null,2, 2, null),
-(25648,'Hanna Smith','999-000-1234','45 Easy Rd, Phoenix AZ 99999', 'Easy@gmail.com', '2019 Toyota Tacoma', 'AZ', null, null,3, 3, null),
-(73564,'Tabby Jones','789-222-9876','100 10th Rd, LA CA 99999', 'TabbyCat@cat.com', '2020 Chrysler 200', 'CA', null, null,1, 4, null),
-(44556,'Sabrina Baxter','777-777-7777','777 Star Circle, San Diego CA 44444', 'SabrinaStar@yahoo.com', '2020 Toyota Camry', 'CA', null, null,2, 5, null),
-(77765,'Luna Moon','333-777-9898','1/2 Moon  Rd, San Diego CA 99999', 'FullMoon@yahoo.com', '1999 VW Golf GTI Rabbit', 'CA', null, null,3, 6, null );
+INSERT INTO claim(claim_number,claimant_name,claimant_phone,claimant_address,claimant_email,claimant_auto,occurrence_state, employee_id,member_id  ) VALUES
+(23284,'Jack Black','987-989-9898','90 Golf Rd, Phoenix AZ 99999', 'Golf@golf.com', '1999 VW Bug', 'AZ', 1,  1),
+(78996,'Big O Notation','876-987-0000','O nth st, San Diego CA 99999', 'BigO@gmail.com', '2000 Toyota Camry', 'CA' ,2, 2),
+(25648,'Hanna Smith','999-000-1234','45 Easy Rd, Phoenix AZ 99999', 'Easy@gmail.com', '2019 Toyota Tacoma', 'AZ',3, 3 ),
+(73564,'Tabby Jones','789-222-9876','100 10th Rd, LA CA 99999', 'TabbyCat@cat.com', '2020 Chrysler 200', 'CA', 1, 4),
+(44556,'Sabrina Baxter','777-777-7777','777 Star Circle, San Diego CA 44444', 'SabrinaStar@yahoo.com', '2020 Toyota Camry', 'CA',2, 5),
+(77765,'Luna Moon','333-777-9898','1/2 Moon  Rd, San Diego CA 99999', 'FullMoon@yahoo.com', '1999 VW Golf GTI Rabbit', 'CA',3, 6 );
+
+--TransportationCheckList
+INSERT INTO transportation_check_list(call,call_doc,claimant_call,claimant_call_doc, claimant_letter ,letter, claim_id) VALUES
+(true,'test',false,'test',false, false,1),
+(false,null, true,null, false, false,2),
+(true, null,false, null,false, false,3);
+--(false,null, false,null, false, false),
+--(false, null,false,null, false, false),
+--(false,null, false,null, false, false);
+
+--CarNotOnPolicyCheckList
+INSERT INTO car_not_on_policy_check_list(call_doc,call_member,claimant_call, claimant_call_doc,claimant_letter ,final_letter_member, rental_agreement, claim_id ) VALUES
+('test',true, false, 'test',false, false, false,6),
+('test',false, true,null, false, false, false,4),
+('test',true, false, null,false, false, false,5);

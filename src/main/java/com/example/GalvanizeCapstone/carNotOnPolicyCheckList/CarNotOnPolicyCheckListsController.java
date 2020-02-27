@@ -19,6 +19,12 @@ public class CarNotOnPolicyCheckListsController {
     public List<CarNotOnPolicyCheckList> getAllCarNotOnPolicyCheckLists() {
         return this.carNotOnPolicyCheckListsService.getAllCarNotOnPolicyCheckLists();
     }
+
+    @GetMapping("/claims/{id}")
+    public CarNotOnPolicyCheckList getCarNotOnPolicyChecklistByClaimId(@PathVariable int id) {
+        CarNotOnPolicyCheckList carNotOnPolicyCheckList = carNotOnPolicyCheckListsService.getOneCarNotOnPolicyCheckList(id).orElseThrow(IllegalArgumentException::new);
+        return carNotOnPolicyCheckList;
+    }
     @GetMapping("/{id}")
     public CarNotOnPolicyCheckList getOneCarNotOnPolicyCheckList(@PathVariable int id) {
         CarNotOnPolicyCheckList carNotOnPolicyCheckList = carNotOnPolicyCheckListsService.getOneCarNotOnPolicyCheckList(id).orElseThrow(IllegalArgumentException::new);

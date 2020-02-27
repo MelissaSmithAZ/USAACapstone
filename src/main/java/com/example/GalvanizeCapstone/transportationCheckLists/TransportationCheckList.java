@@ -1,5 +1,6 @@
 package com.example.GalvanizeCapstone.transportationCheckLists;
 
+import com.example.GalvanizeCapstone.claims.Claim;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -31,6 +32,10 @@ public class TransportationCheckList {
 
         @Column
         private String claimant_call_doc;
+
+        @OneToOne
+        @JoinColumn
+        private Claim claim;
 
         public TransportationCheckList() {
         }

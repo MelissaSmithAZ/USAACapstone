@@ -18,6 +18,9 @@ public class TransportationCheckListsService {
     public List<TransportationCheckList> getAllTransportationCheckLists() {
         return this.transportationCheckListsRepository.findAll();
     }
+    public TransportationCheckList getTransportationChecklistByClaimId(int id) {
+        return transportationCheckListsRepository.findByClaimId(id);
+    }
     public Optional<TransportationCheckList> getOneTransportationCheckList(int id) {
         return transportationCheckListsRepository.findById(id);
     }

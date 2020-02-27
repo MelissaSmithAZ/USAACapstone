@@ -1,5 +1,6 @@
 package com.example.GalvanizeCapstone.carNotOnPolicyCheckList;
 
+import com.example.GalvanizeCapstone.claims.Claim;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -24,8 +25,6 @@ public class CarNotOnPolicyCheckList {
 
     @Column
     private Boolean rental_agreement;
-//    @Column
-//    private  String notes_on_rental_agreement;
 
     @Column
     private Boolean claimant_letter;
@@ -38,6 +37,10 @@ public class CarNotOnPolicyCheckList {
 
     @Column
     private Boolean final_letterMember;
+
+    @OneToOne
+    @JoinColumn
+    private Claim claim;
 
     public CarNotOnPolicyCheckList() {}
 }

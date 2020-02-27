@@ -1,9 +1,6 @@
 package com.example.GalvanizeCapstone.claims;
 
-import com.example.GalvanizeCapstone.carNotOnPolicyCheckList.CarNotOnPolicyCheckList;
-import com.example.GalvanizeCapstone.coverageCheckLists.CoverageCheckList;
 import com.example.GalvanizeCapstone.members.Member;
-import com.example.GalvanizeCapstone.transportationCheckLists.TransportationCheckList;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -22,17 +19,17 @@ import javax.persistence.*;
         @JoinColumn
         private Member member;
 
-        @OneToOne
-        @JoinColumn
-        private CoverageCheckList coverageCheckList;
+//        @OneToOne
+//        @JoinColumn
+//        private CoverageCheckList coverageCheckList;
+//
+//        @OneToOne
+//        @JoinColumn
+//         private CarNotOnPolicyCheckList carNotOnPolicyCheckList;
 
-        @OneToOne
-        @JoinColumn
-         private CarNotOnPolicyCheckList carNotOnPolicyCheckList;
-
-        @OneToOne
-        @JoinColumn
-        private TransportationCheckList transportationCheckList;
+//        @OneToOne
+//        @JoinColumn
+//        private TransportationCheckList transportationCheckList;
 
         @Column
         private int claim_number;

@@ -18,6 +18,11 @@ public class CarNotOnPolicyCheckListsService {
     public List<CarNotOnPolicyCheckList> getAllCarNotOnPolicyCheckLists() {
         return this.carNotOnPolicyCheckListsRepository.findAll();
     }
+
+    public CarNotOnPolicyCheckList getCarNotOnPolicyChecklistByClaimId(int id) {
+        return carNotOnPolicyCheckListsRepository.findByClaimId(id);
+    }
+
     public Optional<CarNotOnPolicyCheckList> getOneCarNotOnPolicyCheckList(int id) {
         return carNotOnPolicyCheckListsRepository.findById(id);
     }
