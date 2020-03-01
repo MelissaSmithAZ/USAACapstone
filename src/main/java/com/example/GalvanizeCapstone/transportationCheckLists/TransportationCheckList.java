@@ -29,9 +29,11 @@ public class TransportationCheckList {
 
         @Column
         private Boolean claimant_call;
-
         @Column
         private String claimant_call_doc;
+
+        @Column
+        private Boolean coverage_decision;
 
         @OneToOne
         @JoinColumn

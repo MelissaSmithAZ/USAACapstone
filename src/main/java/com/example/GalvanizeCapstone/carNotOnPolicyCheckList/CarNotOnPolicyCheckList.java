@@ -38,6 +38,9 @@ public class CarNotOnPolicyCheckList {
     @Column
     private Boolean final_letterMember;
 
+    @Column
+    private Boolean coverage_decision;
+
     @OneToOne
     @JoinColumn
     private Claim claim;

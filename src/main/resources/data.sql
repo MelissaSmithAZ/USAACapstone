@@ -44,16 +44,16 @@ INSERT INTO claim(claim_number,claimant_name,claimant_phone,claimant_address,cla
 (77765,'Luna Moon','333-777-9898','1/2 Moon  Rd, San Diego CA 99999', 'FullMoon@yahoo.com', '1999 VW Golf GTI Rabbit', 'CA',3, 6 );
 
 --TransportationCheckList
-INSERT INTO transportation_check_list(call,call_doc,claimant_call,claimant_call_doc, claimant_letter ,letter, claim_id) VALUES
-(true,'test',false,'test',false, false,1),
-(false,null, true,null, false, false,2),
-(true, null,false, null,false, false,3);
+INSERT INTO transportation_check_list(call,call_doc,claimant_call,claimant_call_doc, claimant_letter ,coverage_decision,letter, claim_id) VALUES
+(true,'test',false,'test',false ,false, false,1),
+(false,null, true,null, false ,false, false,2),
+(true, null,false, null,false ,false, false,3);
 --(false,null, false,null, false, false),
 --(false, null,false,null, false, false),
 --(false,null, false,null, false, false);
 
 --CarNotOnPolicyCheckList
-INSERT INTO car_not_on_policy_check_list(call_doc,call_member,claimant_call, claimant_call_doc,claimant_letter ,final_letter_member, rental_agreement, claim_id ) VALUES
-('test',true, false, 'test',false, false, false,6),
-('test',false, true,null, false, false, false,4),
-('test',true, false, null,false, false, false,5);
+INSERT INTO car_not_on_policy_check_list(call_doc,call_member,claimant_call, claimant_call_doc,claimant_letter , coverage_decision,final_letter_member, rental_agreement, claim_id ) VALUES
+('test',true, false, 'test',false ,false, false, false,6),
+('test',false, true,null, false , false, false, false,4),
+('test',true, false, null,false ,false, false, false,5);
