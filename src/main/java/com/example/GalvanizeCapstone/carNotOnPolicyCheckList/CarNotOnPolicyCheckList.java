@@ -17,10 +17,10 @@ public class CarNotOnPolicyCheckList {
 
 
     @Column
-    private Boolean callMember;
+    private Boolean call_member;
 
     @Column
-    private  String callDoc;
+    private  String call_doc;
 
 
     @Column
