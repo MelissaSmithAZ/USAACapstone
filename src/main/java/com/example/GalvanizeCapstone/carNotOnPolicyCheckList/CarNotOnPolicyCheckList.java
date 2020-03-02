@@ -41,8 +41,8 @@ public class CarNotOnPolicyCheckList {
     @Column
     private Boolean coverage_decision;
 
-    @OneToOne
-    @JoinColumn
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(unique = true)
     private Claim claim;
 
     public CarNotOnPolicyCheckList() {}

@@ -2,6 +2,8 @@ package com.example.GalvanizeCapstone.claims;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import java.util.List;
 
@@ -12,8 +14,11 @@ public class ClaimsController {
     @Autowired
     private final ClaimsService claimsService;
 
-    public ClaimsController(ClaimsService claimsService) {
+    private final EntityManager entityManager;
+
+    public ClaimsController(ClaimsService claimsService, EntityManager entityManager) {
         this.claimsService = claimsService;
+        this.entityManager = entityManager;
     }
 
     @GetMapping
@@ -44,7 +49,17 @@ public class ClaimsController {
 
     @DeleteMapping("/{id}")
     public String removeOneClaim(@PathVariable int id) {
-        Claim claim = claimsService.getOneClaim(id).orElseThrow(IllegalArgumentException::new);
+        Query q1 = entityManager.createNativeQuery("delete from transportationCheckList  where claim_id = ?");
+        q1.setParameter(1, id);
+        entityManager.joinTransaction();
+        q1.executeUpdate();
+
+        Query q2 = entityManager.createNativeQuery("delete from carNotOnPolicyCheckList  where claim_id = ?");
+        q1.setParameter(1, id);
+        entityManager.joinTransaction();
+        q2.executeUpdate();
+
+//        Claim claim = claimsService.getOneClaim(id).orElseThrow(IllegalArgumentException::new);
         return claimsService.removeOneClaim(id);
     }
 

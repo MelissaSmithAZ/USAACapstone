@@ -19,18 +19,6 @@ import javax.persistence.*;
         @JoinColumn
         private Member member;
 
-//        @OneToOne
-//        @JoinColumn
-//        private CoverageCheckList coverageCheckList;
-//
-//        @OneToOne
-//        @JoinColumn
-//         private CarNotOnPolicyCheckList carNotOnPolicyCheckList;
-
-//        @OneToOne
-//        @JoinColumn
-//        private TransportationCheckList transportationCheckList;
-
         @Column
         private int claim_number;
 
