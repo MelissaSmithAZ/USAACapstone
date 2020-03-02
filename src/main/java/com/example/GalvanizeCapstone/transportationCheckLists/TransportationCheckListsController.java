@@ -35,15 +35,15 @@ public class TransportationCheckListsController {
         TransportationCheckList transportationCheckList = transportationCheckListsService.getOneTransportationCheckList(id).orElseThrow(IllegalArgumentException::new);
         return transportationCheckList;
     }
-    @PostMapping
-    public TransportationCheckList addOneTransportationCheckList(@RequestBody TransportationCheckList newTransportationCheckList) {
-        if (newTransportationCheckList.getCall() == null || newTransportationCheckList.getLetter() == null || newTransportationCheckList.getClaimant_call() == null || newTransportationCheckList.getClaimant_letter() == null)
-            throw new IllegalArgumentException("Not all fields are valid. Go back and make sure all fields are valid " + "before API call is made.");
-
-
+    @PostMapping("/{claim_id}")
+    public TransportationCheckList addOneTransportationCheckList(@RequestBody TransportationCheckList newTransportationCheckList, @PathVariable int claim_id) {
+        Claim claim = this.claimsService.getOneClaim(claim_id).orElseThrow(IllegalArgumentException::new);
+        newTransportationCheckList.setClaim(claim);
         return transportationCheckListsService.addOneTransportationCheckList(newTransportationCheckList);
-
     }
+
+
+
     @PatchMapping("/{claim_id}")
     public TransportationCheckList updateOneTransportationCheckList(@RequestBody TransportationCheckList updatedTransportationCheckList, @PathVariable int claim_id) {
         TransportationCheckList transportationCheckList = transportationCheckListsService.getOneTransportationCheckList(updatedTransportationCheckList.getId()).orElseThrow(IllegalArgumentException::new);
