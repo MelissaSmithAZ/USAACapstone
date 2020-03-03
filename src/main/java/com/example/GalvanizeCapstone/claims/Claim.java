@@ -19,6 +19,8 @@ import javax.persistence.*;
         @JoinColumn
         private Member member;
 
+//        onCheckList transportationCheckList;
+
         @Column
         private int claim_number;
 

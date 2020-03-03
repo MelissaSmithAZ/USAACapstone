@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 
 @Entity
-@Table( name = "carNotOnPolicyCheckList")
+@Table( name = "car_not_on_policy_check_list")
 @Data
 public class CarNotOnPolicyCheckList {
 
@@ -41,8 +41,8 @@ public class CarNotOnPolicyCheckList {
     @Column
     private Boolean coverage_decision;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(unique = true)
+    @OneToOne
+    @JoinColumn
     private Claim claim;
 
     public CarNotOnPolicyCheckList() {}
