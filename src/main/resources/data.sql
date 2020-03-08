@@ -41,19 +41,27 @@ INSERT INTO claim(claim_number,claimant_name,claimant_phone,claimant_address,cla
 (25648,'Hanna Smith','999-000-1234','45 Easy Rd, Phoenix AZ 99999', 'Easy@gmail.com', '2019 Toyota Tacoma', 'AZ',3, 3 ),
 (73564,'Tabby Jones','789-222-9876','100 10th Rd, LA CA 99999', 'TabbyCat@cat.com', '2020 Chrysler 200', 'CA', 1, 4),
 (44556,'Sabrina Baxter','777-777-7777','777 Star Circle, San Diego CA 44444', 'SabrinaStar@yahoo.com', '2020 Toyota Camry', 'CA',2, 5),
-(77765,'Luna Moon','333-777-9898','1/2 Moon  Rd, San Diego CA 99999', 'FullMoon@yahoo.com', '1999 VW Golf GTI Rabbit', 'CA',3, 6 );
-
+(77765,'Luna Moon','333-777-9898','1/2 Moon  Rd, San Diego CA 99999', 'FullMoon@yahoo.com', '1999 VW Golf GTI Rabbit', 'CA',3, 1 ),
+(79909,'Jim Morison','333-777-9898','1/2 Moon  Rd, San Diego CA 99999', 'FullMoon@yahoo.com', '1999 VW Golf GTI Rabbit', 'CA',3, 5 ),
+(98989,'Jimmy Jones','333-777-9898','1/2 Moon  Rd, San Diego CA 99999', 'FullMoon@yahoo.com', '1999 VW Golf GTI Rabbit', 'CA',3, 3 ),
+(78983,'Bob Dillon','333-777-9898','1/2 Moon  Rd, San Diego CA 99999', 'FullMoon@yahoo.com', '1999 VW Golf GTI Rabbit', 'CA',3, 1 ),
+(34567,'Susan Brown','333-777-9898','1/2 Moon  Rd, San Diego CA 99999', 'FullMoon@yahoo.com', '1999 VW Golf GTI Rabbit', 'CA',3, 2),
+(12345,'Gavin Park','333-777-9898','1/2 Moon  Rd, San Diego CA 99999', 'FullMoon@yahoo.com', '1999 VW Golf GTI Rabbit', 'CA',3, 4 ),
+(33333,'Jill Jones','333-777-9898','1/2 Moon  Rd, San Diego CA 99999', 'FullMoon@yahoo.com', '1999 VW Golf GTI Rabbit', 'CA',3, 5 ),
+(77777,'Clara Bell','333-777-9898','1/2 Moon  Rd, San Diego CA 99999', 'FullMoon@yahoo.com', '1999 VW Golf GTI Rabbit', 'CA',3, 6 ),
+(88776,'Jack Frost','333-777-9898','1/2 Moon  Rd, San Diego CA 99999', 'FullMoon@yahoo.com', '1999 VW Golf GTI Rabbit', 'CA',3, 1 );
 --TransportationCheckList
 INSERT INTO transportation_check_list(call,call_doc,claimant_call,claimant_call_doc, claimant_letter ,coverage_decision,letter, claim_id) VALUES
-(true,'test',false,'test',false ,false, false,1),
-(false,null, true,null, false ,false, false,2),
-(true, null,false, null,false ,false, false,3);
+(true,'test',false,'test',false ,null, false,1),
+(false,null, true,null, false ,null, false,2),
+(true, null,false, null,false ,null, false,3);
+
 --(false,null, false,null, false, false),
 --(false, null,false,null, false, false),
 --(false,null, false,null, false, false);
 
 --CarNotOnPolicyCheckList
 INSERT INTO car_not_on_policy_check_list(call_doc,call_member,claimant_call, claimant_call_doc,claimant_letter , coverage_decision,final_letter_member, rental_agreement, claim_id ) VALUES
-('test',true, false, 'test',false ,false, false, false,6),
-('test',false, true,null, false , false, false, false,4),
-('test',true, false, null,false ,false, false, false,5);
+('test',true, false, 'test',false ,null, false, false,6),
+('test',false, true,null, false , null, false, false,4),
+('test',true, false, null,false ,null, false, false,5);
