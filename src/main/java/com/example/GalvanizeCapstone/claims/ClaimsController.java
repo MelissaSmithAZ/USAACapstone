@@ -53,12 +53,12 @@ public class ClaimsController {
     public String removeOneClaim(@PathVariable int id) {
         Query q1 = entityManager.createNativeQuery("delete from transportation_check_list  where claim_id = ?");
         q1.setParameter(1, id);
-        entityManager.joinTransaction();
+//        entityManager.joinTransaction();
         q1.executeUpdate();
 
         Query q2 = entityManager.createNativeQuery("delete from car_not_on_policy_check_list  where claim_id = ?");
         q2.setParameter(1, id);
-        entityManager.joinTransaction();
+//        entityManager.joinTransaction();
         q2.executeUpdate();
 
 //        Claim claim = claimsService.getOneClaim(id).orElseThrow(IllegalArgumentException::new);

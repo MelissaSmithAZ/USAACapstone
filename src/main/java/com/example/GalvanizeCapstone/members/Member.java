@@ -1,5 +1,7 @@
 package com.example.GalvanizeCapstone.members;
 
+import com.example.GalvanizeCapstone.policy.Policy;
+
 import lombok.Data;
 
 import javax.persistence.*;
@@ -42,6 +44,10 @@ public class Member {
 
     @Column
     private  int pd_coverage;
+
+    @ManyToOne
+    @JoinColumn
+    private Policy policy;
 
 //    @OneToMany
 //    @JoinColumn
