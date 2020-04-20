@@ -25,29 +25,29 @@ public class PolicysController {
     }
 
     @GetMapping("/{id}")
-    public Member getOneContact(@PathVariable int id) {
-        Member member = membersService.getOneMember(id).orElseThrow(IllegalArgumentException::new);
-        return member;
+    public Policy getOnePolicy(@PathVariable int id) {
+        Policy policy = policysService.getOnePolicy(id).orElseThrow(IllegalArgumentException::new);
+        return policy;
     }
 
     @PostMapping
-    public Member addOneMember(@RequestBody Member newMember) {
-        if (newMember.getEmail() == null || newMember.getAddress() == null || newMember.getMember_number() < 0 || newMember.getMember_name() == null || newMember.getPhone() == null     || newMember.getBase_state() == null  || newMember.getAuto_1() == null){
+    public Policy addOnePolicy(@RequestBody Policy newPolicy) {
+        if (newPolicy.getPolicy() == null )   {
             throw new IllegalArgumentException("Not all fields are valid. Go back and make sure all fields are valid " +
                     "before API call is made.");
         }
-        return membersService.addOneMember(newMember);
+        return policysService.addOnePolicy(newPolicy);
     }
 
     @PatchMapping
-    public Member updateOneMember(@RequestBody Member updatedMember) {
-        Member member = membersService.getOneMember(updatedMember.getId()).orElseThrow(IllegalArgumentException::new);
-        return membersService.updateOneMember(updatedMember);
+    public Policy updateOnePolicy(@RequestBody Policy updatedPolicy) {
+        Policy policy = policysService.getOnePolicy(updatedPolicy.getId()).orElseThrow(IllegalArgumentException::new);
+        return policysService.updateOnePolicy(updatedPolicy);
     }
 
     @DeleteMapping("/{id}")
-    public String removeOneMember(@PathVariable int id) {
-        Member member = membersService.getOneMember(id).orElseThrow(IllegalArgumentException::new);
-        return membersService.removeOneMember(id);
+    public String removeOnePolicy(@PathVariable int id) {
+        Policy policy = policysService.getOnePolicy(id).orElseThrow(IllegalArgumentException::new);
+        return policysService.removeOnePolicy(id);
     }
 }
